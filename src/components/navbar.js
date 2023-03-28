@@ -6,7 +6,7 @@ import Course from '../images/Course.png'
 import Current from '../images/Current.png'
 const navbar = () => {
   return (
-    <div className='my-6 mx-2 bg-[#1E2A55] w-28 text-center rounded-3xl'>
+    <div className='my-6 mx-2 bg-[#1E2A55] min-w-[50px] w-[7%] h-fit text-center rounded-3xl'>
       <ul className=' justify-between inline-block'>
         <li className=' items-center my-6 py-3'>
           <img src={Dash} alt='Home' />
