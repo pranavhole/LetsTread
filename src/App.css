@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  background-color: rgb(242,242,242);
+}
+
 .App {
   text-align: center;
 }
