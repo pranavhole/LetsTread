@@ -7,15 +7,9 @@ import Current from '../images/Current.png'
 import Profile from '../images/Profile.png'
 const navbar = () => {
   return (
-<<<<<<< HEAD
-    <div className='my-6 mx-2 bg-[#1E2A55] min-w-[50px] w-[7%] h-fit text-center rounded-3xl'>
-      <ul className=' justify-between inline-block'>
-        <li className=' items-center my-6 py-3'>
-=======
     <div className='my-6 mx-2 bg-[#1E2A55] w-28 text-center rounded-3xl flex items-stretch'>
       <ul className='justify-between inline-block'>
         <li className='flex-1 text-center items-center my-6 py-3'>
->>>>>>> 8d9dacad8419c4f5304c0c0d86587cb286f86a42
           <img src={Dash} alt='Home' />
           <span className='text-white'>Dashboard</span></li>
         <li className='flex-1 text-center items-center my-6 py-3 '>
