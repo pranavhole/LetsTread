@@ -2,6 +2,7 @@ import React from "react";
 import ImageSlider from "./ImageSlider";
 import Card from "./Card";
 import courseCard from "./courseCard";
+import Middle from "./middle";
 
 function createCard(coursep) {
     return (
@@ -39,12 +40,27 @@ function Home() {
           <ImageSlider slides={slides} />
         </div>
       </div>
+
       <div className="relative -top-[40rem] flex justify-center items-center">
         <div style={titleStyles}>WHY YOU SHOULD JOIN LET’S TRADE INDIA?</div>
       </div>
+
       <div className="relative -top-[45rem] flex justify-center items-center" >
       <dl className="dictionary">{courseCard.map(createCard)}</dl>
       </div>
+
+      <div className="relative -top-[45rem] flex justify-center items-center">
+        <div style={titleStyles}>WHY YOU SHOULD JOIN LET’S TRADE INDIA?</div>
+      </div>
+
+      <div className="relative -top-[55rem] left-[16%] w-[80%]">
+          <Middle />
+      </div>
+
+      {/* <div className="relative -top-[40rem] flex justify-center items-center">
+        <div style={titleStyles}>HOW DOES IT WORKS?</div>
+        <p>Here are simple steps to start your journey with LTI</p>
+      </div> */}
     </>
   );
 }
