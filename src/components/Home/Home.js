@@ -4,6 +4,9 @@ import Card from "./Card";
 import courseCard from "./courseCard";
 import Middle from "./middle";
 import Steps from "./steps";
+import Feedback from "./feedback";
+import customerFeedback from "./customerFeedback";
+
 
 function createCard(coursep) {
   return (
@@ -16,6 +19,16 @@ function createCard(coursep) {
   );
 }
 
+function custFeedback(custf){
+    return(
+ <Feedback
+ name={custf.name}
+ star={custf.star}
+ profile={custf.profile}
+ content={custf.content}
+ />
+    );
+}
 function Home() {
   const slides = [
     { url: "http://localhost:3000/image-1.jpg", title: "beach" },
@@ -81,6 +94,13 @@ function Home() {
       </div>
       <div className="relative -top-[60rem] left-[16%] w-[80%]">
         <Steps />
+      </div>
+
+      <div className="relative -top-[50rem] flex justify-center items-center">
+        <div style={titleStyles}>Customer Feedback & Reviews</div>
+      </div>
+      <div className="relative -top-[45rem] flex justify-center items-center">
+        <dl>{customerFeedback.map(custFeedback)}</dl>
       </div>
     </>
   );
