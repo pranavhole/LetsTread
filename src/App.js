@@ -10,8 +10,8 @@ function App() {
     { url: "http://localhost:3000/image-3.png", title: "forest" },
   ];
   const containerStyles = {
-    width: "500px",
-    height: "280px",
+    width: "950px",
+    height: "450px",
     margin: "0 auto",
   };
   return (
@@ -20,10 +20,10 @@ function App() {
         <div className=' sticky top-24'>
         <Navbar />
         </div>
-        <div className=' relative -z-10 -top-[40rem] left-[9%]  w-[100%]'>
+        <div className=' relative  -top-[45rem] left-[16%]  w-[80%]'>
         <div style={containerStyles}>
        <ImageSlider slides={slides} />
-      </div>
+        </div>
         </div>
     
     </>
