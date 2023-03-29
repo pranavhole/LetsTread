@@ -20,7 +20,7 @@ function App() {
         <div className=' sticky top-24'>
         <Navbar />
         </div>
-        <div className=' relative -z-10 -top-[40rem] left-[9%]  w-[100%]'>
+        <div className=' relative -top-[40rem] left-[9%]  w-[100%]'>
         <div style={containerStyles}>
        <ImageSlider slides={slides} />
       </div>
