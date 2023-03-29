@@ -1,29 +1,3 @@
-// import { useState } from "react";
-
-// const ImageSlider = ({slides})=>{
-// const [currentIndex, setCurrentIndex] = useState(0);
-// const sliderStyles = {
-//     position: "relative",
-//     height: "100%",
-//   };
-  
-// const slidesStyles ={
-//     width:"100%",
-//     height:"100%",
-//     borderRadius:"10px",
-//     backgroundPosition:"center",
-//     backgroundSize:"cover",
-//     backgroundImage: `url(${slides[currentIndex].url})`,
-// };
-
-// return(
-// <div style={sliderStyles}>
-//     <div style={slidesStyles}></div>
-// </div>
-// );
-// };
-
-// export default ImageSlider;
 import { useState } from "react";
 
 const slideStyles = {
