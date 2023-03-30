@@ -8,7 +8,7 @@ import Profile from '../images/Profile.png'
 import { Link } from 'react-router-dom'
 const navbar = () => {
   return (
-    <div className='my-6 mx-2 bg-[#1E2A55] w-28 text-center rounded-3xl'>
+    <div className='my-6 mx-2 bg-[#1E2A55] w-28 h-full text-center rounded-3xl'>
     <ul className=' justify-between inline-block'>
       <Link to="./dashboard"><li className=' items-center my-3 '>
         <div className='inline-block'><img src={Dash} alt='Home' /></div>

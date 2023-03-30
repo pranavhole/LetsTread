@@ -7,16 +7,18 @@ import Dashboard from './components/Dashboard';
 function App() {
   return (
     <BrowserRouter>
-      <div className=' sticky top-0 z-10'>
         <Header />
-      </div>
-      <div className=' sticky top-24'>
+      <div className='flex w-screen'>
         <Navbar />
-      </div>
-      <Routes>
+        <div className=' overflow-y-scroll h-[85vh] w-full '>
+        <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/dashboard' element={<Dashboard/>} />
+        
       </Routes>
+      </div>
+      </div>
+      
 
     </BrowserRouter>
   );

@@ -62,10 +62,9 @@ function Home() {
   };
   return (
     <>
-      <div className=" -z-10 relative -top-[33rem] inline-flex w-screen justify-evenly">
-        <div className="text-center "></div>
+      <div className="relative inline-flex w-full justify-evenly ">
         <div className=" flex flex-col justify-center space-y-4">
-          <div className="h-screen">
+          <div className="h-screen py-8">
             <div style={containerStyles}>
               <ImageSlider slides={slides} />
             </div>
@@ -75,7 +74,7 @@ function Home() {
             <dl className="dictionary flex">{courseCard.map(createCard)}</dl>
           </div>
           <div className=" ">
-            <div style={titleStyles}>WHY YOU SHOULD JOIN LET’S TRADE INDIA?</div>
+            <div style={titleStyles}>WHY YOU SHOULD JOIN LET'S TRADE INDIA?</div>
             <Middle />
           </div>
           <div className="flex flex-col  justify-center items-center">
