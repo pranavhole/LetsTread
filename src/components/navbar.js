@@ -22,6 +22,10 @@ const navbar = () => {
         <Link to="./"><li className='items-center my-3 '>
         <div className='inline-block'><img src={Current} alt='Home' /></div>
         <div>Home</div></li></Link>
+        <Link to="./"><li className='items-center my-3 '>
+        <div className='inline-block'><img src={Profile} alt='Home' /></div>
+        <div>Home</div></li></Link>
+        <Link to="./"><li className='items-center my-3 '>
         <div className='inline-block'><img src={Info} alt='Home' /></div>
         <div>Home</div></li></Link>
     </ul>
