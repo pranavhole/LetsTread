@@ -1,4 +1,4 @@
-import { Container } from "postcss";
+// import { Container } from "postcss";
 import React from "react";
 
 export default function topAbout() {
@@ -21,7 +21,7 @@ export default function topAbout() {
                 <div className="flex flex-col  justify-center items-center text-2xl text-[#216825] pt-6 font-bold">
                   WE ARE
                 </div>
-                <img
+                <img alt="vv"
                   className="px-96 pb-0"
                   src="http://localhost:3000/Images/logo3d.png"
                 />

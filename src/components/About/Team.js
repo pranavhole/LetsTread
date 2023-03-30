@@ -25,7 +25,7 @@ export default function Team() {
 
       <div className="flex flex-col justify-center items-center">
         <div className="flex flex-col  justify-center items-center">
-          <img
+          <img alt="abc"
             className="px-96 pb-0"
             src="http://localhost:3000/Images/profilePic.png"
           />
