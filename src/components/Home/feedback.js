@@ -12,7 +12,7 @@ function feedback(props) {
           />
         </div>
         <div className="flex py-25">
-          <div className="py-3 w-96">
+          <div className="py-3 w-[39rem]">
             <h1 className=" flex text-3xl text-black font-bold">{props.name}
             <img
             src={props.star}

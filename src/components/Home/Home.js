@@ -19,15 +19,15 @@ function createCard(coursep) {
   );
 }
 
-function custFeedback(custf){
-    return(
- <Feedback
- name={custf.name}
- star={custf.star}
- profile={custf.profile}
- content={custf.content}
- />
-    );
+function custFeedback(custf) {
+  return (
+    <Feedback
+      name={custf.name}
+      star={custf.star}
+      profile={custf.profile}
+      content={custf.content}
+    />
+  );
 }
 function Home() {
   const slides = [
@@ -62,45 +62,34 @@ function Home() {
   };
   return (
     <>
-      <div className="relative -top-[45rem] left-[16%] w-[80%]">
-        <div style={containerStyles}>
-          <ImageSlider slides={slides} />
+      <div className=" -z-10 relative -top-[33rem] inline-flex w-screen justify-evenly">
+        <div className="text-center "></div>
+        <div className=" flex flex-col justify-center space-y-4">
+          <div className="h-screen">
+            <div style={containerStyles}>
+              <ImageSlider slides={slides} />
+            </div>
+          </div>
+          <div className=" flex flex-col justify-center items-center">
+            <div style={titleStyles}>We offer following Stock Trading Courses</div>
+            <dl className="dictionary flex">{courseCard.map(createCard)}</dl>
+          </div>
+          <div className=" ">
+            <div style={titleStyles}>WHY YOU SHOULD JOIN LET’S TRADE INDIA?</div>
+            <Middle />
+          </div>
+          <div className="flex flex-col  justify-center items-center">
+            <div style={titleStyles}>HOW DOES IT WORKS?</div>
+            <div style={paraStyle}>
+              Here are simple steps to start your journey with LTI
+            </div>
+            <Steps />
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <div style={titleStyles}>Customer Feedback & Reviews</div>
+            <dl className=" w-full">{customerFeedback.map(custFeedback)}</dl>
+          </div>
         </div>
-      </div>
-
-      <div className="relative -top-[40rem] flex justify-center items-center">
-        <div style={titleStyles}>We offer following Stock Trading Courses</div>
-      </div>
-
-      <div className="relative -top-[45rem] flex justify-center items-center">
-        <dl className="dictionary">{courseCard.map(createCard)}</dl>
-      </div>
-
-      <div className="relative -top-[45rem] flex justify-center items-center">
-        <div style={titleStyles}>WHY YOU SHOULD JOIN LET’S TRADE INDIA?</div>
-      </div>
-
-      <div className="relative -top-[55rem] left-[16%] w-[80%]">
-        <Middle />
-      </div>
-
-      <div className="relative -top-[60rem] flex justify-center items-center">
-        <div style={titleStyles}>HOW DOES IT WORKS?</div>
-      </div>
-      <div className="relative -top-[60rem] flex justify-center items-center">
-        <div style={paraStyle}>
-          Here are simple steps to start your journey with LTI
-        </div>
-      </div>
-      <div className="relative -top-[60rem] left-[16%] w-[80%]">
-        <Steps />
-      </div>
-
-      <div className="relative -top-[50rem] flex justify-center items-center">
-        <div style={titleStyles}>Customer Feedback & Reviews</div>
-      </div>
-      <div className="relative -top-[45rem] flex justify-center items-center">
-        <dl>{customerFeedback.map(custFeedback)}</dl>
       </div>
     </>
   );
