@@ -12,22 +12,22 @@ const navbar = () => {
     <ul className=' justify-between inline-block'>
       <Link to="./dashboard"><li className=' items-center my-3 '>
         <div className='inline-block'><img src={Dash} alt='Home' /></div>
-        <div>Dashboard</div></li></Link>
+        <div className='text-white'>Dashboard</div></li></Link>
         <Link to="./"><li className='items-center my-3 '>
         <div className='inline-block'><img src={home} alt='Home' /></div>
-        <div>Home</div></li></Link>
+        <div className='text-white'>Home</div></li></Link>
         <Link to="./"><li className='items-center my-3 '>
         <div className='inline-block'><img src={Course} alt='Home' /></div>
-        <div>Home</div></li></Link>
+        <div className='text-white'>Courses</div></li></Link>
         <Link to="./"><li className='items-center my-3 '>
         <div className='inline-block'><img src={Current} alt='Home' /></div>
-        <div>Home</div></li></Link>
+        <div className='text-white'>My Learning</div></li></Link>
         <Link to="./"><li className='items-center my-3 '>
         <div className='inline-block'><img src={Profile} alt='Home' /></div>
-        <div>Home</div></li></Link>
-        <Link to="./"><li className='items-center my-3 '>
+        <div className='text-white'>Profile</div></li></Link>
+        <Link to="./about"><li className='items-center my-3 '>
         <div className='inline-block'><img src={Info} alt='Home' /></div>
-        <div>Home</div></li></Link>
+        <div className='text-white'>About</div></li></Link>
     </ul>
   </div>
   
