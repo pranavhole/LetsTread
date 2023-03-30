@@ -4,6 +4,7 @@ import Header from './components/header';
 import Home from './components/Home/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
+import About from './components/About/About';
 function App() {
   return (
     <BrowserRouter>
