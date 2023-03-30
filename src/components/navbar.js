@@ -16,7 +16,7 @@ const navbar = () => {
         <Link to="./"><li className='items-center my-3 '>
         <div className='inline-block'><img src={home} alt='Home' /></div>
         <div className='text-white'>Home</div></li></Link>
-        <Link to="./"><li className='items-center my-3 '>
+        <Link to="./courses"><li className='items-center my-3 '>
         <div className='inline-block'><img src={Course} alt='Home' /></div>
         <div className='text-white'>Courses</div></li></Link>
         <Link to="./"><li className='items-center my-3 '>
