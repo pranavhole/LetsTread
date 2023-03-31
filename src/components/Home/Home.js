@@ -15,6 +15,7 @@ function createCard(coursep) {
       title={coursep.title}
       price={coursep.price}
       offer={coursep.offer}
+      courseUrl={coursep.courseUrl}
     />
   );
 }
