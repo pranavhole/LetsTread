@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import About from "./components/About/About";
 import Courses from "./components/Courses/Courses";
-
+import Course1 from "./components/Courses/Course1";
 import Footer from "./components/Footer";
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
             <Route path="/courses" element={<Courses />} />
+            <Route path="/course1" element={<Course1 />} />
           </Routes>
           <Footer />
         </div>
