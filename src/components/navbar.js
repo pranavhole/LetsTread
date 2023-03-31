@@ -43,8 +43,7 @@ const Navbar = () => {
     },
   ]
   return (
-    <nav>
-    <div className='my-6 mx-2 bg-[#1E2A55] w-28 h-fill text-center rounded-3xl'>
+    <div className='my-6 mx-2 bg-[#1E2A55] w-28 text-center rounded-3xl'>
       <div className='p-5'>
         {
           manuItem.map((item, index) => (
@@ -56,7 +55,7 @@ const Navbar = () => {
         }
       </div>
     </div>
-    </nav>
+
   
   )
 }
