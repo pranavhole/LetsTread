@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 function Card(props) {
   return (
     <div className="term">
@@ -10,7 +10,7 @@ function Card(props) {
       <div className="middle">
         <p className="price">{props.price}</p>
         <p className="offer">{props.offer}</p>
-        <Link to="/about" className="seeMore">See More +</Link>
+        <a href="/" className="seeMore">See More +</a>
       </div>
       <div className="bottom">
       <Link to={props.courseUrl}>Subscribe Now</Link>
