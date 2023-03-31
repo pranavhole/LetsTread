@@ -13,7 +13,7 @@ function Card(props) {
         <Link to="/about" className="seeMore">See More +</Link>
       </div>
       <div className="bottom">
-      <Link to="/">Subscribe Now</Link>
+      <Link to={props.courseUrl}>Subscribe Now</Link>
       </div>
     </div>
   );

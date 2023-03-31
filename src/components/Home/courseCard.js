@@ -5,6 +5,7 @@ const courseCard = [
     title: "Combo",
     price: "₹ 15,000",
     offer: "25% Off",
+    courseUrl:'/about'
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const courseCard = [
     title: "Combo",
     price: "₹ 15,000",
     offer: "25% Off",
+    courseUrl:'/about'
   },
  
 ];
