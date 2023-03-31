@@ -43,13 +43,13 @@ const Navbar = () => {
     },
   ]
   return (
-    <div className='my-6 mx-2 bg-[#1E2A55] w-28 text-center rounded-3xl'>
+    <div className='my-6 mx-2 bg-[#1E2A55] w-28 h-full text-center rounded-3xl'>
       <div className='p-5'>
         {
           manuItem.map((item, index) => (
             <NavLink to={item.path} key={index} className="link" activeClassName="active" >
-              <div className='inline-block  text-4xl pt-3' >{item.icon}</div>
-              <div className=' pb-5'>{item.name}</div>
+              <div className='inline-block  text-3xl pt-3' >{item.icon}</div>
+              <div className=' pb-3'>{item.name}</div>
             </NavLink>
           ))
         }
