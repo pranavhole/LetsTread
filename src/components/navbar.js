@@ -1,37 +1,64 @@
 import React from 'react'
-import home from '../images/HomePage.png'
-import Dash from '../images/Dashboard.png'
-import Info from '../images/Info.png'
-import Course from '../images/Course.png'
-import Current from '../images/Current.png'
-import Profile from '../images/Profile.png'
-import { Link } from 'react-router-dom'
-const navbar = () => {
+import { NavLink } from 'react-router-dom'
+import {
+  FaTh,
+  FaHome,
+  // FaBars,
+  FaUserAlt,
+  FaBookmark,
+  FaBookReader,
+  FaInfoCircle
+} from "react-icons/fa"
+const Navbar = () => {
+  const manuItem = [
+    {
+      path: '/dashboard',
+      name: "Dashboard",
+      icon: <FaTh />,
+    },
+    {
+      path: '/',
+      name: "Home",
+      icon: <FaHome />,
+    },
+    {
+      path: '/',
+      name: "MY Learning",
+      icon: <FaBookmark />,
+    },
+    {
+      path: '/courses',
+      name: "Course",
+      icon: <FaBookReader />,
+    },
+    {
+      path: '/',
+      name: "Profile",
+      icon: <FaUserAlt />,
+    },
+    {
+      path: '/about',
+      name: "About",
+      icon: <FaInfoCircle />,
+    },
+  ]
   return (
+    <nav>
     <div className='my-6 mx-2 bg-[#1E2A55] w-28 h-full text-center rounded-3xl'>
-    <ul className=' justify-between inline-block'>
-      <Link to="./dashboard"><li className=' items-center my-3 '>
-        <div className='inline-block'><img src={Dash} alt='Home' /></div>
-        <div className='text-white'>Dashboard</div></li></Link>
-        <Link to="./"><li className='items-center my-3 '>
-        <div className='inline-block'><img src={home} alt='Home' /></div>
-        <div className='text-white'>Home</div></li></Link>
-        <Link to="./courses"><li className='items-center my-3 '>
-        <div className='inline-block'><img src={Course} alt='Home' /></div>
-        <div className='text-white'>Courses</div></li></Link>
-        <Link to="./"><li className='items-center my-3 '>
-        <div className='inline-block'><img src={Current} alt='Home' /></div>
-        <div className='text-white'>My Learning</div></li></Link>
-        <Link to="./"><li className='items-center my-3 '>
-        <div className='inline-block'><img src={Profile} alt='Home' /></div>
-        <div className='text-white'>Profile</div></li></Link>
-        <Link to="./about"><li className='items-center my-3 '>
-        <div className='inline-block'><img src={Info} alt='Home' /></div>
-        <div className='text-white'>About</div></li></Link>
-    </ul>
-  </div>
+      <div className='p-5'>
+        {
+          manuItem.map((item, index) => (
+            <NavLink to={item.path} key={index} className="link" activeClassName="active" >
+              <div className='inline-block  text-4xl pt-3' >{item.icon}</div>
+              <div className=' pb-5'>{item.name}</div>
+            </NavLink>
+          ))
+        }
+      </div>
+    </div>
+    </nav>
   
   )
 }
 
-export default navbar
+export default Navbar
