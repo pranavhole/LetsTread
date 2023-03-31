@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Login() {
   const imageStyles = {
-    backgroundImage: "url(http://localhost:3000/Images/bgimage2.png)",
+    backgroundImage: "url(http://localhost:3000/Images/bgimage.png)",
     height: "100vh",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -31,14 +31,35 @@ export default function Login() {
 
               {/* body */}
               <div className="flex justify-around">
-                <div className="container flex pl-0 ml-0 pt-24">
+                <div className="container flex px-10 pl-24">
                   <img
-                    src={process.env.PUBLIC_URL + "/Images/slide1.png"}
-                    className="box2 rounded-2xl w-40"
+                    src={process.env.PUBLIC_URL + "/Images/login.png"}
+                    className="box2 rounded-2xl w-5/6"
                     alt=""
                   />
                 </div>
-                
+
+                {/* login card */}
+                <div className="loginbox w-5/6">
+                  <div className="field">
+                    <form className="flex flex-col">
+                      <input
+                        type="email"
+                        placeholder="email@example.com"
+                        className="text-black-800 w-2/3 p-2 focus:border-[#1E2A55] rounded"
+                      />
+                      <input
+                        type="password"
+                        placeholder="Password"
+                        className="text-black-800 w-2/3 p-2 focus:border-[#1E2A55] rounded"
+                      />
+                      <button className="p-2 w-1/3 bg-[#2F8433] text-white hover:bg-[#1E2A55] rounded">
+                        Login
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                {/* login card */}
               </div>
               {/* body */}
             </div>
