@@ -65,7 +65,7 @@ function Home() {
     <>
       <div className="relative inline-flex w-full justify-evenly ">
         <div className=" flex flex-col justify-center space-y-4">
-          <div className=" py-8">
+          <div className="py-8">
             <div style={containerStyles}>
               <ImageSlider slides={slides} />
             </div>
