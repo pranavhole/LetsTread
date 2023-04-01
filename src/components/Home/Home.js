@@ -69,11 +69,11 @@ function Home() {
     <>
       <div className=" flex-wrap  w-full justify-evenly screen">
         <div className=" flex flex-col justify-center space-y-4">
-          <div className="py-8">
+          {/* <div className="py-8">
             <div style={containerStyles}>
               <ImageSlider slides={slides} />
             </div>
-          </div>
+          </div> */}
           <Fade duration={3000} left>
           <div className=" flex flex-col justify-center items-center text-center">
             <div style={titleStyles}>We offer following Stock Trading Courses</div>

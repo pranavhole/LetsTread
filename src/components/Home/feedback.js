@@ -4,24 +4,36 @@ function feedback(props) {
   
   return (
     <div className=''>
-      <div className="flex justify-center">
-        <div class="flex items-center px-5">
+      <div className="container flex abcd3 items-center">
+  <img className=' h-fit' src={props.profile} alt="example image" />
+
+  <div className=' inline-block'>
+  <h2>{props.name}</h2>
+  <p>{props.content}</p>
+  </div>
+  
+</div>
+
+      {/* <div className="flex justify-center">
+        <div class="flex items-center w-[100px] file:">
           <img
             src={props.profile}
-            className="rounded-2xl w-30"
+            className="rounded-2xl w-[100px] h-[100px]"
             alt=""
           />
         </div>
         <div className="flex py-25">
-          <div className="py-3 w-[39rem]">
+          <div className="py-3 w-[80%]">
+            <div>
             <h1 className=" flex text-3xl text-black font-bold">{props.name}
             </h1>
-            <p className="py-5 w-[-webkit-fill-available] h-[-webkit-fill-available] not-italic font-medium ">
+            </div>
+            <div>
               {props.content}
-            </p>
+            </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
