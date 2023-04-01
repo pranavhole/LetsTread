@@ -40,7 +40,7 @@ export default function Login() {
                 </div>
 
                 {/* login card */}
-                <div className="loginbox w-5/6">
+                <div className="loginbox w-[45rem]">
                   <div className="field">
                     <form className="flex flex-col">
                       <input

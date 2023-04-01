@@ -28,7 +28,7 @@ function middle() {
           </p>
         </div>
       </div>
-      <div class="flex items-center px-10 pl-24">
+      <div class="flex items-center px-10 pl-24 abc">
          <img
           src={process.env.PUBLIC_URL + "/Images/Group-1.png"}
           className="rounded-2xl w-60"

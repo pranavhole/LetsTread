@@ -24,12 +24,10 @@ function Courses() {
   };
   return (
     <>
-    <div>
-      <div className="relative inline-flex w-full justify-evenly ">
+       <div className="relative inline-flex w-full justify-evenly ">
         <div className=" flex flex-col justify-center space-y-4">
-          <div className="py-12">
-            <div style={Container}>
-              {/* content */}
+        <div style={Container}>
+              
               <div className="flex justify-around">
                 <div className="py-3 pl-10 w-5/6">
                   <p className="py-4 pb-10 text-[#2F2F2F] font-medium text-xl">
@@ -58,11 +56,9 @@ function Courses() {
             </div>
             <div className=" flex flex-col justify-center items-center">
             <dl className="dictionary flex">{CourseCard.map(createCard)}</dl>
-            </div>
-          </div>
+            </div> 
         </div>
       </div>
-    </div>
 
 
     </>
@@ -70,3 +66,4 @@ function Courses() {
 }
 
 export default Courses;
+

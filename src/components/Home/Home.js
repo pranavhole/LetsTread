@@ -6,10 +6,12 @@ import Middle from "./middle";
 import Steps from "./steps";
 import Feedback from "./feedback";
 import customerFeedback from "./customerFeedback";
+import { Fade } from "react-reveal";
 
 
 function createCard(coursep) {
   return (
+    
     <Card
       img={coursep.img}
       title={coursep.title}
@@ -17,6 +19,7 @@ function createCard(coursep) {
       offer={coursep.offer}
       courseUrl={coursep.courseUrl}
     />
+  
   );
 }
 
@@ -42,7 +45,8 @@ function Home() {
     margin: "0 auto",
   };
   const titleStyles = {
-    height: "65px",
+    margin:"2rem",
+    height: "fit-content",
     left: "453px",
     top: "2710px",
     borderRadius: "nullpx",
@@ -63,32 +67,42 @@ function Home() {
   };
   return (
     <>
-      <div className="relative inline-flex w-full justify-evenly ">
+      <div className=" flex-wrap  w-full justify-evenly screen">
         <div className=" flex flex-col justify-center space-y-4">
           <div className="py-8">
             <div style={containerStyles}>
               <ImageSlider slides={slides} />
             </div>
           </div>
-          <div className=" flex flex-col justify-center items-center">
+          <Fade duration={3000} left>
+          <div className=" flex flex-col justify-center items-center text-center">
             <div style={titleStyles}>We offer following Stock Trading Courses</div>
-            <dl className="dictionary flex">{courseCard.map(createCard)}</dl>
+            <dl className="justify-center dictionary flex ">{courseCard.map(createCard)}</dl>
           </div>
-          <div className=" ">
+          </Fade>
+          <Fade duration={3000} right>
+          <div className=" text-center">
             <div style={titleStyles}>WHY YOU SHOULD JOIN LET'S TRADE INDIA?</div>
             <Middle />
           </div>
-          <div className="flex flex-col  justify-center items-center">
+          </Fade>
+          <Fade duration={3000} left>
+          <div className="flex flex-col  justify-center items-center text-center">
             <div style={titleStyles}>HOW DOES IT WORKS?</div>
             <div style={paraStyle}>
               Here are simple steps to start your journey with LTI
             </div>
             <Steps />
           </div>
-          <div className="flex flex-col justify-center items-center">
-            <div style={titleStyles}>Customer Feedback & Reviews</div>
-            <dl className=" w-full">{customerFeedback.map(custFeedback)}</dl>
+          </Fade>
+          
+          <div className="flex flex-col justify-center items-center text-center">
+          <Fade duration={3000} right>
+            <div style={titleStyles} className=" justify-center">Customer Feedback & Reviews</div>
+            <dl className=" w-full justify-center">{customerFeedback.map(custFeedback)}</dl>
+            </Fade>
           </div>
+         
         </div>
       </div>
     </>
