@@ -40,8 +40,8 @@ function Home() {
     { url: "http://localhost:3000/image-3.png", title: "forest" },
   ];
   const containerStyles = {
-    width: "950px",
-    height: "450px",
+    width: "90vw",
+    height: "80vh",
     margin: "0 auto",
   };
   const titleStyles = {
@@ -69,11 +69,11 @@ function Home() {
     <>
       <div className=" flex-wrap  w-full justify-evenly screen">
         <div className=" flex flex-col justify-center space-y-4">
-          {/* <div className="py-8">
+          <div className="py-8">
             <div style={containerStyles}>
               <ImageSlider slides={slides} />
             </div>
-          </div> */}
+          </div>
           <Fade duration={3000} left>
           <div className=" flex flex-col justify-center items-center text-center">
             <div style={titleStyles}>We offer following Stock Trading Courses</div>
@@ -81,7 +81,7 @@ function Home() {
           </div>
           </Fade>
           <Fade duration={3000} right>
-          <div className=" text-center">
+          <div className=" text-center justify-center">
             <div style={titleStyles}>WHY YOU SHOULD JOIN LET'S TRADE INDIA?</div>
             <Middle />
           </div>

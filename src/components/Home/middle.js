@@ -2,7 +2,7 @@ import React from "react";
 
 function middle() {
   return (
-    <div className="flex justify-around">
+    <div className="flex justify-center">
       <div className="">
         <div className="py-3 w-96">
           <p className="py-9">
