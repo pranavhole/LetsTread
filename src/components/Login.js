@@ -37,9 +37,9 @@ export default function Login() {
 
               {/* body */}
               <div className="flex justify-around">
-                <div className="container flex px-10 pl-24">
+                <div className="container flex px-10 pl-10">
                   <img
-                    src={process.env.PUBLIC_URL + "/Images/login.png"}
+                    src={process.env.PUBLIC_URL + "/Images/login6.png"}
                     className="box2 rounded-2xl w-5/6"
                     alt=""
                   />

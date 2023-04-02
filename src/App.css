@@ -101,7 +101,7 @@ body {
 /* .title{ */
 
 /* } */
-.container {
+/* .container {
   perspective: 600px;
 }
 
@@ -114,6 +114,18 @@ body {
 
 .box2:hover {
   transform: rotatey(60deg);
+} */
+.container{
+  perspective: 600px;
+  
+}
+.box2{
+  transition: all .5s;
+  transform-origin: center;
+  margin-top: 20px;
+}
+.box2:hover{
+  transform: translateY(6px);
 }
 
 /* login card */
