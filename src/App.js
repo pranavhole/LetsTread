@@ -25,6 +25,7 @@ function App() {
           <Route path="course1" element={<Course1 />} />
           <Route path="login" key="Login" element={<Login />} />
         </Route>
+        <Route path="login" key="Login" element={<Login />} />
       </Routes>
 
 
