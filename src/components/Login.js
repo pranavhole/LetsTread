@@ -7,18 +7,24 @@ export default function Login() {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
   };
-  const titleStyles = {
-    height: "65px",
-    left: "453px",
-    top: "2710px",
-    borderRadius: "nullpx",
-    fontFamily: "Mulish",
-    fontSize: "40px",
-    fontWeight: "700",
-    lineHeight: "65px",
-    letterSpacing: "0em",
-    color: "rgba(45, 85, 47, 1)",
-  };
+  // const titleStyles = {
+  //   height: "65px",
+  //   left: "453px",
+  //   top: "2710px",
+  //   borderRadius: "nullpx",
+  //   fontSize: "40px",
+  //   fontWeight: "700",
+  //   lineHeight: "65px",
+  //   letterSpacing: "0em",
+  //   fontFamily: 'Segoe UI',
+  //   backgroundSize: "400%",
+  //   backgroundClip: "text",
+  //   webkitBackgroundClip: "text",
+  //   color: "rgba(45, 85, 47, 1)",
+  //   color: "rgb(224, 79, 99)",
+  //   backgroundImage: "linear-gradient(-45deg,rgb(224, 79, 99), rgb(23, 26, 226))",
+  // animation: "animasi 3s linear infinite",
+  // };
   return (
     <>
       <div style={imageStyles}>
@@ -26,7 +32,7 @@ export default function Login() {
           <div className=" flex flex-col justify-center space-y-4">
             <div className="py-4">
               <div className=" flex flex-col justify-center items-center">
-                <div style={titleStyles}>LET’S TRADE INDIA LOGIN</div>
+                <div className="title">LET’S TRADE INDIA LOGIN</div>
               </div>
 
               {/* body */}
@@ -46,7 +52,7 @@ export default function Login() {
                       <input
                         type="email"
                         placeholder="email@example.com"
-                        className="text-black-800 w-96 p-2 m-4 focus:border-[#1E2A55] rounded-xl"
+                        className="items-center text-black-800 w-96 p-2 m-4 focus:border-[#1E2A55] rounded-xl"
                       />
                       <input
                         type="password"
