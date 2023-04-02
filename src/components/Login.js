@@ -40,22 +40,24 @@ export default function Login() {
                 </div>
 
                 {/* login card */}
-                <div className="loginbox w-[45rem]">
+                <div className="loginbox w-[40rem]">
                   <div className="field">
                     <form className="flex flex-col">
                       <input
                         type="email"
                         placeholder="email@example.com"
-                        className="text-black-800 w-2/3 p-2 focus:border-[#1E2A55] rounded"
+                        className="text-black-800 w-96 p-2 m-4 focus:border-[#1E2A55] rounded-xl"
                       />
                       <input
                         type="password"
                         placeholder="Password"
-                        className="text-black-800 w-2/3 p-2 focus:border-[#1E2A55] rounded"
+                        className="text-black-800 w-96 p-2 m-4 focus:border-[#1E2A55] rounded-xl"
                       />
-                      <button className="p-2 w-1/3 bg-[#2F8433] text-white hover:bg-[#1E2A55] rounded">
+                      <button className="p-2 ml-4 m-4 w-40 bg-[#2F8433] text-white hover:bg-[#1E2A55] rounded-xl">
                         Login
                       </button>
+                      <div className="p-2 ml-4 text-[#327E36] font-medium">New User?</div>
+                      <div className="p-2 ml-4">Forgot Password?</div>
                     </form>
                   </div>
                 </div>
