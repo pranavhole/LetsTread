@@ -150,6 +150,9 @@ p {
     align-items: center;
     flex-direction: column;
   }
+  .resNav{
+    display: none;
+  }
 }
 
 /* Adjust font size for screens smaller than 400px */
@@ -169,6 +172,9 @@ p {
   .abcd3{
     align-items: center;
     flex-direction: column;
+  }
+  .resNav{
+    display: none;
   }
 }
 .dictionary {

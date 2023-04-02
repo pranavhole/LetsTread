@@ -9,6 +9,7 @@ import customerFeedback from "./customerFeedback";
 import { Fade } from "react-reveal";
 
 
+
 function createCard(coursep) {
   return (
     
@@ -86,7 +87,7 @@ function Home() {
             <Middle />
           </div>
           </Fade>
-          <Fade duration={3000} left>
+          
           <div className="flex flex-col  justify-center items-center text-center">
             <div style={titleStyles}>HOW DOES IT WORKS?</div>
             <div style={paraStyle}>
@@ -94,7 +95,7 @@ function Home() {
             </div>
             <Steps />
           </div>
-          </Fade>
+          
           
           <div className="flex flex-col justify-center items-center text-center">
           <Fade duration={3000} right>

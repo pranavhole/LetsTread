@@ -52,7 +52,7 @@ const Navbar = () => {
     <>
       <button onClick={toggleVisibility} className=' text-white text-2xl absolute top-5 right-4 '><FaBars/></button>
       {isVisible && (
-          <div className='my-6 mx-2 bg-[#1E2A55] w-28 h-full text-center rounded-3xl left-11'>
+          <div className='my-6 mx-2 bg-[#1E2A55] w-28 h-full text-center rounded-3xl left-11 resNav'>
             <div className='p-5'>
               {
                 manuItem.map((item, index) => (
