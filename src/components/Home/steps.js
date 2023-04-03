@@ -7,15 +7,9 @@ export default function steps() {
       {/* step1 */}
       <Fade duration={2000} left>
         <div className="flex justify-around abcd2">
-          <div class="flex items-center px-10 pl-24 abcd">
-            <img
-              src={process.env.PUBLIC_URL + "/Images/step-1.png"}
-              className="rounded-2xl w-60"
-              alt=""
-            />
-          </div>
           <div className="py-40 pl-50">
-            <div className="py-3 w-96">
+            <div className="flex flex-row flex-wrap py-3 w-96">
+              <img src={process.env.PUBLIC_URL + "/Images/icon5.gif" } alt="icon1" className="w-10 h-10 mx-2"/>
               <h1 className="text-3xl text-center text-black font-bold">
                 Make a<span className="text-teal-900"> Decision</span>
               </h1>
@@ -34,18 +28,20 @@ export default function steps() {
           </div>
         </div>
       </Fade>
+      
       {/* step 2 */}
       <Fade duration={2000} right>
         <div className="flex justify-around abcd2">
           <div class="flex items-center px-10 pl-24">
             <img
-              src={process.env.PUBLIC_URL + "/Images/step-2.png"}
-              className="rounded-2xl w-60"
+              src={process.env.PUBLIC_URL + "/Images/222.png"}
+              className="rounded-2xl w-96"
               alt=""
             />
           </div>
           <div className=" pl-50">
-            <div className="py-3 w-96">
+            <div className="flex flex-row flex-wrap py-3 w-96">
+            <img src={process.env.PUBLIC_URL + "/Images/icon5.gif" } alt="icon1" className="w-10 h-10 mx-2"/>
               <h1 className="text-3xl text-center text-black font-bold">
                 <span className="text-teal-900"> Subscribe </span> to our Stock
                 Trading Courses
@@ -68,7 +64,8 @@ export default function steps() {
             />
           </div>
           <div className="py-40 pl-50">
-            <div className="py-3 w-96">
+            <div className="flex flex-row flex-wrap py-3 w-96">
+            <img src={process.env.PUBLIC_URL + "/Images/icon5.gif" } alt="icon1" className="w-10 h-10 mx-2"/>
               <h1 className="text-3xl text-center text-black font-bold">
                 Scheduling<span className="text-teal-900"> Process</span>
               </h1>
@@ -91,13 +88,14 @@ export default function steps() {
         <div className="flex justify-around abcd2">
           <div class="flex items-center px-10 pl-24">
             <img
-              src={process.env.PUBLIC_URL + "/Images/step-4.png"}
-              className="rounded-2xl w-60"
+              src={process.env.PUBLIC_URL + "/Images/444.png"}
+              className="rounded-2xl w-96"
               alt=""
             />
           </div>
           <div className="py-25 pl-50">
-            <div className="py-3 w-96">
+            <div className="flex flex-row flex-wrap py-3 w-96">
+            <img src={process.env.PUBLIC_URL + "/Images/icon5.gif" } alt="icon1" className="w-10 h-10"/>
               <h1 className="text-3xl text-center text-black font-bold"> Transformation
                 <span className="text-teal-900">  Completed </span>
               </h1>
