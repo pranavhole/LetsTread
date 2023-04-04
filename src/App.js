@@ -1,4 +1,5 @@
 import "./App.css";
+
 // import Navbar from "./components/navbar";
 // import Header from "./components/header";
 import Home from "./components/Home/Home";
@@ -8,23 +9,25 @@ import Dashboard from "./components/Dashboard";
 import About from "./components/About/About";
 import Courses from "./components/Courses/Courses";
 import Course1 from "./components/Courses/Course1";
+import Registration from "./components/Home/registration";
 // import Navbar from "./components/navbar";
 import Login from "./components/Login";
 // import Footer from "./components/Footer";
 // import WithoutNav from "./components/WithoutNav";
 // import WithNav from "./components/WithNav";
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <Routes >
-        <Route path="/" Key="Home" element={<HomeMain />} >
-          <Route path="" key="Home" element={<Home/>}/>
-          <Route path="dashboard" key="Dashboard" element={<Dashboard />} />
-          <Route path="about" key="About" element={<About />} />
-          <Route path="courses" key="Courses" element={<Courses />} />
+        <Route path="/"  element={<HomeMain name={props.name} />} >
+          <Route path=""  element={<Home/>}/>
+          <Route path="dashboard"  element={<Dashboard />} />
+          <Route path="about"  element={<About />} />
+          <Route path="courses"  element={<Courses />} />
           <Route path="course1" element={<Course1 />} />
         </Route>
-        <Route path="/login" key="Login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/reg" element={<Registration />} />
       </Routes>
 
 

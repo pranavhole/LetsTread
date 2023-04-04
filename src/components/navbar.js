@@ -56,7 +56,7 @@ const Navbar = () => {
             <div className='p-5'>
               {
                 manuItem.map((item, index) => (
-                  <NavLink to={item.path} key={index} className="link" activeClassName="active" >
+                  <NavLink to={item.path} key={item.name} className="link" activeClassName="active" >
                     <div className='inline-block  text-3xl pt-3' >{item.icon}</div>
                     <div className=' pb-3'>{item.name}</div>
                   </NavLink>
