@@ -28,7 +28,7 @@ const Navbar = () => {
       icon: <FaHome />,
     },
     {
-      path: '/',
+      path: '/MyLearning',
       name: "MY Learning",
       icon: <FaBookmark />,
     },
@@ -48,16 +48,17 @@ const Navbar = () => {
       icon: <FaInfoCircle />,
     },
   ]
+
   return (
     <>
-      <button onClick={toggleVisibility} className=' text-white text-2xl absolute top-5 right-4 '><FaBars/></button>
+      <button onClick={toggleVisibility} className='fabbut '><FaBars/></button>
       {isVisible && (
-          <div className='my-6 mx-2 bg-[#1E2A55] w-28 h-full text-center rounded-3xl left-11 resNav'>
+          <div className='my-6 mx-2 bg-[#1E2A55] w-28 h-full text-center rounded-3xl left-11 resNav max-h-[75vh] flex-wrap'>
             <div className='p-5'>
               {
                 manuItem.map((item, index) => (
-                  <NavLink to={item.path} key={item.name} className="link" activeClassName="active" >
-                    <div className='inline-block  text-3xl pt-3' >{item.icon}</div>
+                  <NavLink to={item.path} key={item.name} className="link max-h-[10vh]" activeClassName="active" >
+                    <div className='inline-block max-h-[5vh] text-3xl pt-3' >{item.icon}</div>
                     <div className=' pb-3'>{item.name}</div>
                   </NavLink>
                 ))

@@ -24,7 +24,7 @@ function Courses() {
   };
   return (
     <>
-       <div className="relative inline-flex w-full justify-evenly ">
+       <div className="relative inline-flex w-full justify-evenly pt-3">
         <div className=" flex flex-col justify-center space-y-4">
         <div style={Container}>
               

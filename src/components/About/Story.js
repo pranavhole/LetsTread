@@ -21,7 +21,7 @@ export default function Story() {
         </div>
       </div>
 
-      <div className="flex justify-around">
+      <div className="flex justify-around arti">
         <div className="">
           <div className="py-3 pl-24 w-5/6">
             <p className="py-9">

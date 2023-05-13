@@ -14,7 +14,9 @@ body {
   margin: 4rem auto;
   max-width: 90%;
 }
-
+.fabbut{
+  display:none;
+}
 .dictionary>.term {
   text-align: center;
   max-width: 20rem;
@@ -213,14 +215,39 @@ p {
   .resNav {
     display: none;
   }
+  .fabbut{
+    display: block;
+    right: 1rem;
+    top:1.25rem;
+    position:absolute;
+    z-index: 7;
+    font-size: 1.5rem/* 24px */;
+    line-height: 2rem/* 32px */;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
 }
 
 /* Adjust font size for screens smaller than 400px */
 @media only screen and (max-width: 400px) {
   body {
     font-size: 12px;
+    
   }
-
+  .arti{
+    display:flex;
+    flex-direction: column-reverse;
+  }
+  .fabbut{
+    display: block;
+    right: 1rem;
+    top:1.25rem;
+    position:absolute;
+    font-size: 1.5rem/* 24px */;
+    line-height: 2rem/* 32px */;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
   .abc {
     display: none;
   }
