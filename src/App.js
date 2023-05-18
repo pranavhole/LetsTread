@@ -1,7 +1,6 @@
 import "./App.css";
 
-// import Navbar from "./components/navbar";
-// import Header from "./components/header";
+
 import Home from "./components/Home/Home";
 import HomeMain from "./HomeMain";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -10,13 +9,10 @@ import About from "./components/About/About";
 import Courses from "./components/Courses/Courses";
 import Course1 from "./components/Courses/Course1";
 import Registration from "./components/Home/registration";
-// import MyCoursesPage from "./components/myLearning/MyLearning";
-// import View from "./components/myLearning/video/view";
-// import Navbar from "./components/navbar";
+import MyCoursesPage from "./components/myLearning/MyLearning"
 import Login from "./components/Login";
-// import Footer from "./components/Footer";
-// import WithoutNav from "./components/WithoutNav";
-// import WithNav from "./components/WithNav";
+import Comments from "./components/discussion/Comments";
+import Views from "./videos/view"
 
 function App() {
   return (
@@ -27,11 +23,15 @@ function App() {
           <Route path="dashboard"  element={<Dashboard />} />
           <Route path="about"  element={<About />} />
           <Route path="courses"  element={<Courses />} />
+          <Route path="/Mylearning" element={<MyCoursesPage />} />
           <Route path="course1" element={<Course1 />} />
+          <Route path="Comments" element={<Comments commentsUrl="http://localhost:3004/comments"
+        currentUserId="1"/>}/>
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/reg" element={<Registration />} />
-        {/* <Route path='/view' element={<View/>}/> */}
+        
+        <Route path='/view' element={<Views/>}/>
       </Routes>
 
 
