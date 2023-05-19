@@ -186,6 +186,40 @@ p {
   word-wrap: break-word;
 }
 
+
+
+.dictionary {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 4rem auto;
+  max-width: 90%;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container h2 {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.container p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* adjust the font size to 800px */
+
 @media only screen and (max-width: 800px) {
   body {
     font-size: 14px;
@@ -259,7 +293,9 @@ p {
   .abcd2 {
     flex-direction: column;
   }
-
+  .abcd2 .abcd22{
+    padding-left: 30px;
+  }
   .abcd3 {
     align-items: center;
     flex-direction: column;
@@ -268,33 +304,18 @@ p {
   .resNav {
     display: none;
   }
-}
-
-.dictionary {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 4rem auto;
-  max-width: 90%;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.container img {
-  max-width: 100%;
-  height: auto;
-}
-
-.container h2 {
-  font-size: 2em;
-  margin-top: 20px;
-}
-
-.container p {
-  font-size: 1.2em;
-  line-height: 1.5;
-  margin-top: 10px;
+  .dictionary {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 4rem auto;
+    max-width: 90%;
+  }
+  
+  .container-card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 }

@@ -1,17 +1,17 @@
 import React from "react";
-import Card from '../Home/Card';
-import CourseCard from '../Home/courseCard'
+import Card from "../Home/Card";
+import CourseCard from "../Home/courseCard";
 
 function createCard(coursep) {
-    return (
-      <Card
-        img={coursep.img}
-        title={coursep.title}
-        price={coursep.price}
-        offer={coursep.offer}
-      />
-    );
-  }
+  return (
+    <Card
+      img={coursep.img}
+      title={coursep.title}
+      price={coursep.price}
+      offer={coursep.offer}
+    />
+  );
+}
 function Courses() {
   const Container = {
     width: "950px",
@@ -24,46 +24,44 @@ function Courses() {
   };
   return (
     <>
-       <div className="relative inline-flex w-full justify-evenly pt-3">
-        <div className=" flex flex-col justify-center space-y-4">
-        <div style={Container}>
-              
-              <div className="flex justify-around">
-                <div className="py-3 pl-10 w-5/6">
-                  <p className="py-4 pb-10 text-[#2F2F2F] font-medium text-xl">
-                    Get Together Finance (GTF) is one of the best share market
-                    institute in Jaipur. Currently, the share market education
-                    courses are designed to suit learning requirements of the
-                    students, traders, investors, and working professionals
-                    where they can learn how to trade in stock market using the
-                    technical analysis based on chart reading techniques
-                    (trading in the zone). These stock trading techniques can be
-                    applied perfectly on equity, forex, currency, commodities
-                    etc. to give you better monetary returns or to generate
-                    wealth in the share market.
-                  </p>
-                </div>
-
-                <div class="flex items-center px-3 pr-20">
-                  <img
-                    src={process.env.PUBLIC_URL + "/Images/image7.png"}
-                    className="rounded-2xl px-4 pr-0"
-                    alt=""
-                  />
-                </div>
+      <div className="relative inline-flex w-full justify-evenly pt-3 container-card">
+        <div className=" flex flex-col justify-center space-y-4 ">
+          <div style={Container}>
+            <div className="flex justify-around ">
+              <div className="py-3 pl-10 w-5/6">
+                <p className="py-4 pb-10 text-[#2F2F2F] font-medium text-xl">
+                  Get Together Finance (GTF) is one of the best share market
+                  institute in Jaipur. Currently, the share market education
+                  courses are designed to suit learning requirements of the
+                  students, traders, investors, and working professionals where
+                  they can learn how to trade in stock market using the
+                  technical analysis based on chart reading techniques (trading
+                  in the zone). These stock trading techniques can be applied
+                  perfectly on equity, forex, currency, commodities etc. to give
+                  you better monetary returns or to generate wealth in the share
+                  market.
+                </p>
               </div>
-              {/* content */}
+
+              <div class="flex items-center px-3 pr-20">
+                <img
+                  src={process.env.PUBLIC_URL + "/Images/image7.png"}
+                  className="rounded-2xl px-4 pr-0"
+                  alt=""
+                />
+              </div>
             </div>
-            <div className=" flex flex-col justify-center items-center">
-            <dl className="dictionary flex">{CourseCard.map(createCard)}</dl>
-            </div> 
+            {/* content */}
+          </div>
+          <div className=" flex flex-col justify-center items-center">
+            <dl className="justify-center dictionary flex">
+              {CourseCard.map(createCard)}
+            </dl>
+          </div>
         </div>
       </div>
-
-
     </>
   );
 }
 
 export default Courses;
-
