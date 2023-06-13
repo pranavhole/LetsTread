@@ -8,10 +8,11 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import About from "./components/About/About";
 import Courses from "./components/Courses/Courses";
 import Course1 from "./components/Courses/Course1";
-import Registration from "./components/Home/registration";
+import RegistrationForm from "./components/Home/registration";
 import MyCoursesPage from "./components/myLearning/MyLearning"
 import Login from "./components/Login";
 import StockChart from "./components/myLearning/Treadcanvas/Treadcanvas";
+import DiscussionSection from "./components/discussion/discussion";
 import CommentSection from "./components/discussion/discussion";
 // import Comments from "./components/discussion/Comment"
 // import Views from "./videos/view"
@@ -27,12 +28,12 @@ function App() {
           <Route path="courses"  element={<Courses />} />
           <Route path="/Mylearning" element={<MyCoursesPage />} />
           <Route path="course1" element={<Course1 />} />
-          <Route path="Discussion" element={<CommentSection/>}/>
+          <Route path="Discussion" element={<DiscussionSection/>}/>
           {/* <Route path="Comments" element={<Comments commentsUrl="http://localhost:3004/comments" */}
         {/* currentUserId="1"/>}/> */}
         </Route>
         <Route path="/login" element={<Login />} />
-        <Route path="/reg" element={<Registration />} />
+        <Route path="/reg" element={<RegistrationForm />} />
         <Route path='/tread' element={<StockChart/>} />       
         {/* <Route path='/view' element={<Views/>}/> */}
       </Routes>

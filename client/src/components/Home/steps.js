@@ -7,7 +7,7 @@ export default function steps() {
     <>
 
       {/* step1 */}
-      <Fade duration={2000} left>
+
         <div className="flex justify-around abcd2">
           <div className="py-40 pl-50">
             <div className="flex flex-row flex-wrap py-3 w-96">
@@ -25,10 +25,10 @@ export default function steps() {
             <Stock/>
           </div>
         </div>
-      </Fade>
+
       
       {/* step 2 */}
-      <Fade duration={2000} right>
+
         <div className="flex justify-around abcd2">
           <div class="flex items-center px-10 pl-24">
             <Stock2/>
@@ -46,9 +46,7 @@ export default function steps() {
             </div>
           </div>
         </div>
-      </Fade>
-      {/* step 3 */}
-      <Fade duration={2000} left>
+      
         <div className="flex justify-around abcd2">
           <div class="flex items-center px-10 pl-24 abcd ">
             <img
@@ -76,9 +74,7 @@ export default function steps() {
             />
           </div>
         </div>
-      </Fade>
-      {/* step 4 */}
-      <Fade duration={2000} right>
+      
         <div className="flex justify-around abcd2">
           <div class="flex items-center px-10 pl-24">
             <img
@@ -99,7 +95,7 @@ export default function steps() {
             </div>
           </div>
         </div>
-      </Fade>
+    
     </>
   );
 }

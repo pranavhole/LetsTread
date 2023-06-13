@@ -1,74 +1,92 @@
 import React, { useState } from 'react';
 
-const CommentSection = () => {
+const DiscussionSection = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
-  const [userData, setUserData] = useState({
-    name: 'John Doe',
-    avatar: 'https://example.com/avatar.jpg',
-  });
 
-  const handleInputChange = (e) => {
-    setNewComment(e.target.value);
+  const handleCommentChange = (event) => {
+    setNewComment(event.target.value);
   };
 
-  const addComment = () => {
-    if (newComment.trim() !== '') {
-      const comment = {
-        id: Date.now(),
-        text: newComment,
-        likes: [],
-        replies: [],
-        user: {
-          name: userData.name,
-          avatar: userData.avatar,
-        },
-      };
+  const handleCommentSubmit = (event) => {
+    event.preventDefault();
+    if (newComment.trim() === '') return;
 
-      setComments([...comments, comment]);
-      setNewComment('');
-    }
+    const comment = {
+      id: Date.now(),
+      text: newComment,
+      likes: 0,
+      replies: [],
+    };
+
+    const updatedComments = [...comments, comment];
+    setComments(updatedComments);
+    setNewComment('');
   };
 
-  const addReply = (commentId, replyText) => {
+  const handleReplyChange = (event, commentId) => {
+    const { value } = event.target;
+
     const updatedComments = comments.map((comment) => {
       if (comment.id === commentId) {
-        const reply = {
-          id: Date.now(),
-          text: replyText,
-          likes: [],
-          user: {
-            name: userData.name,
-            avatar: userData.avatar,
-          },
-        };
-
         return {
           ...comment,
-          replies: [...comment.replies, reply],
+          newReply: value,
         };
       }
-
       return comment;
     });
 
     setComments(updatedComments);
   };
 
-  const toggleLike = (commentId, replyId) => {
+  const handleReplySubmit = (event, commentId) => {
+    event.preventDefault();
+
+    const updatedComments = comments.map((comment) => {
+      if (comment.id === commentId && comment.newReply) {
+        const newReply = {
+          id: Date.now(),
+          text: comment.newReply,
+          likes: 0,
+        };
+
+        return {
+          ...comment,
+          replies: [...comment.replies, newReply],
+          newReply: '',
+        };
+      }
+      return comment;
+    });
+
+    setComments(updatedComments);
+  };
+
+  const handleLikeComment = (commentId) => {
+    const updatedComments = comments.map((comment) => {
+      if (comment.id === commentId) {
+        return {
+          ...comment,
+          likes: comment.likes + 1,
+        };
+      }
+      return comment;
+    });
+
+    setComments(updatedComments);
+  };
+
+  const handleLikeReply = (commentId, replyId) => {
     const updatedComments = comments.map((comment) => {
       if (comment.id === commentId) {
         const updatedReplies = comment.replies.map((reply) => {
           if (reply.id === replyId) {
-            const isLiked = reply.likes.includes(userData.name);
-
-            if (isLiked) {
-              reply.likes = reply.likes.filter((name) => name !== userData.name);
-            } else {
-              reply.likes.push(userData.name);
-            }
+            return {
+              ...reply,
+              likes: reply.likes + 1,
+            };
           }
-
           return reply;
         });
 
@@ -77,102 +95,113 @@ const CommentSection = () => {
           replies: updatedReplies,
         };
       }
-
       return comment;
     });
 
     setComments(updatedComments);
   };
 
-  const sortCommentsByLikes = () => {
-    const sortedComments = [...comments].sort((a, b) => b.likes.length - a.likes.length);
-    setComments(sortedComments);
-  };
-
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">Comment Section</h2>
-      <div className="flex mb-4">
-        <img
-          src={userData.avatar}
-          alt={userData.name}
-          className="w-10 h-10 rounded-full mr-2"
-        />
-        <textarea
-          value={newComment}
-          onChange={handleInputChange}
-          placeholder="Write a comment..."
-          className="w-full p-2 border border-gray-400 rounded"
-        ></textarea>
-      </div>
-      <div className="flex mb-4">
-        <button
-          onClick={addComment}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"
-        >
-          Add Comment
-        </button>
-        <button
-          onClick={sortCommentsByLikes}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
-        >
-          Sort by Likes
-        </button>
-      </div>
-      <div>
-        {comments.map((comment) => (
-          <div key={comment.id} className="mb-4">
-            <div className="flex items-center mb-2">
-              <img
-                src={comment.user.avatar}
-                alt={comment.user.name}
-                className="w-8 h-8 rounded-full mr-2"
-              />
-              <h4 className="text-lg font-semibold">{comment.user.name}</h4>
-            </div>
-            <p className="mb-2">{comment.text}</p>
-            <p className="mb-2">Likes: {comment.likes.length}</p>
-            <button
-              onClick={() => toggleLike(comment.id)}
-              className={`px-4 py-2 rounded ${comment.likes.includes(userData.name) ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-600'} hover:bg-blue-700`}
-            >
-              {comment.likes.includes(userData.name) ? 'Unlike' : 'Like'}
-            </button>
-            <button
-              onClick={() => addReply(comment.id, `Reply to comment ${comment.id}`)}
-              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 ml-2"
-            >
-              Reply
-            </button>
-            {comment.replies.length > 0 && (
-              <div className="ml-8 mt-2">
-                {comment.replies.map((reply) => (
-                  <div key={reply.id} className="mb-2">
-                    <div className="flex items-center">
-                      <img
-                        src={reply.user.avatar}
-                        alt={reply.user.name}
-                        className="w-6 h-6 rounded-full mr-2"
-                      />
-                      <h4 className="text-sm font-semibold">{reply.user.name}</h4>
-                    </div>
-                    <p className="mb-2">{reply.text}</p>
-                    <p className="mb-2">Likes: {reply.likes.length}</p>
+    <div className="mt-8">
+      <h2 className="text-2xl font-bold mb-4">Discussion Section</h2>
+      <div className="border border-gray-300 rounded p-4">
+        {comments.length > 0 ? (
+          comments.map((comment) => (
+            <div key={comment.id} className="mb-4">
+              <div className="flex items-start">
+                <img
+                  className="w-10 h-10 rounded-full mr-4"
+                  src="profile-pic.jpg" // Replace with the user's profile picture URL
+                  alt="Profile"
+                />
+                <div>
+                  <p className="font-bold">{comment.text}</p>
+                  <div className="flex items-center mt-2">
                     <button
-                      onClick={() => toggleLike(comment.id, reply.id)}
-                      className={`px-4 py-2 rounded ${reply.likes.includes(userData.name) ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-600'} hover:bg-blue-700`}
+                      className="mr-2 text-gray-500 focus:outline-none"
+                      onClick={() => handleLikeComment(comment.id)}
                     >
-                      {reply.likes.includes(userData.name) ? 'Unlike' : 'Like'}
+                      Like ({comment.likes})
+                    </button>
+                    <button className="text-gray-500 focus:outline-none">
+                      Reply
                     </button>
                   </div>
-                ))}
+                  {comment.replies.length > 0 && (
+                    <div className="ml-10 mt-2">
+                      {comment.replies.map((reply) => (
+                        <div key={reply.id} className="flex items-start">
+                          <img
+                            className="w-8 h-8 rounded-full mr-2"
+                            src="profile-pic.jpg" // Replace with the user's profile picture URL
+                            alt="Profile"
+                          />
+                          <div>
+                            <p>{reply.text}</p>
+                            <div className="flex items-center mt-2">
+                              <button
+                                className="mr-2 text-gray-500 focus:outline-none"
+                                onClick={() =>
+                                  handleLikeReply(comment.id, reply.id)
+                                }
+                              >
+                                Like ({reply.likes})
+                              </button>
+                              <button className="text-gray-500 focus:outline-none">
+                                Reply
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <form
+                    className="mt-2"
+                    onSubmit={(e) => handleReplySubmit(e, comment.id)}
+                  >
+                    <textarea
+                      className="w-full px-4 py-2 border border-gray-300 rounded"
+                      rows="2"
+                      value={comment.newReply || ''}
+                      onChange={(e) => handleReplyChange(e, comment.id)}
+                      placeholder="Write a reply..."
+                    />
+                    <button
+                      type="submit"
+                      className="mt-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                    >
+                      Reply
+                    </button>
+                  </form>
+                </div>
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          ))
+        ) : (
+          <p className="text-gray-500">No comments yet.</p>
+        )}
       </div>
+      <form className="mt-4" onSubmit={handleCommentSubmit}>
+        <label htmlFor="comment" className="block mb-2 font-bold">
+          Add a comment:
+        </label>
+        <textarea
+          id="comment"
+          className="w-full px-4 py-2 border border-gray-300 rounded"
+          rows="4"
+          value={newComment}
+          onChange={handleCommentChange}
+        />
+        <button
+          type="submit"
+          className="mt-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        >
+          Submit
+        </button>
+      </form>
     </div>
   );
 };
 
-export default CommentSection;
+export default DiscussionSection;

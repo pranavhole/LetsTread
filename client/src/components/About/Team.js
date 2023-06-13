@@ -1,40 +1,21 @@
 import React from "react";
 
 export default function Team() {
-  const titleStyles = {
-    height: "65px",
-    left: "453px",
-    top: "1000px",
-    borderRadius: "nullpx",
-    fontFamily: "Mulish",
-    fontSize: "40px",
-    fontWeight: "700",
-    lineHeight: "65px",
-    letterSpacing: "0em",
-    color: "rgba(45, 85, 47, 1)",
-  };
   return (
-    <>
-      <div className="relative inline-flex w-full justify-evenly ">
-        <div className=" flex flex-col justify-center items-center">
-          <div className="py-12">
-            <div style={titleStyles}>OUR TEAM</div>
-          </div>
-        </div>
-      </div>
+    <div className="mt-10">
+      <div className="text-4xl font-bold text-green-900 text-center">OUR TEAM</div>
 
-      <div className="flex flex-col justify-center items-center">
-        <div className="flex flex-col  justify-center items-center">
-          <img alt="abc"
-            className="px-96 pb-0"
-            src="http://localhost:3000/Images/profilePic.png"
+      <div className="flex flex-col md:flex-row justify-center items-center mt-10">
+        <div className="flex flex-col items-center md:w-1/2">
+          <img
+            src={`${process.env.PUBLIC_URL}/Images/profilePic.png`}
+            className="w-[120px] md:w-[120px] rounded-full"
+            alt="Profile Pic"
           />
-          <div className="justify-center items-center text-xl text-[#2F2F2F] font-medium">
-            Amitabh Bacchan
-          </div>
-          <p className="text-center text-[#2F2F2F] font-medium ">Founder</p>
+          <div className="mt-4 text-xl font-medium text-center">Amitabh Bacchan</div>
+          <p className="text-xl font-medium text-center">Founder</p>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -4,7 +4,7 @@ function middle() {
   return (
     <div className="flex justify-center">
       <div className="">
-        <div className="py-3 w-96">
+        <div className="py-3 w-96 text-2xl">
           <p className="py-9">
             It is very important to gain the knowledge firstly, and then enter
             into any trade in the world of the stock market. It is very
