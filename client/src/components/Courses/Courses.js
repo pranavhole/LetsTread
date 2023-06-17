@@ -64,8 +64,12 @@ function Courses() {
   );
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD:client/src/components/Courses/Courses.js
 export default Courses;
 =======
 export default Courses;
 >>>>>>> origin:src/components/Courses/Courses.js
+=======
+export default Courses;
+>>>>>>> f2ca6c5b3d79634e1a44945c0e27f85cf2abb226
