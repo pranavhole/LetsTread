@@ -42,7 +42,7 @@ export default function steps() {
                 <span className="text-teal-900"> Subscribe </span> to our Stock
                 Trading Courses
               </h1>
-              <p className="py-5 text-center not-italic font-medium text-2xl">
+              <p className="py-5 text-center not-italic font-medium text-2xl abcd22">
                 Get in depth knowledge of stock market by subscribing our Trading in the zone and LTI Options Courses.
               </p>
             </div>
@@ -83,7 +83,7 @@ export default function steps() {
               <h1 className="text-3xl text-center text-black font-bold"> Transformation
                 <span className="text-teal-900">  Completed </span>
               </h1>
-              <p className="py-5 text-center not-italic font-medium text-2xl">
+              <p className="py-5 text-center not-italic font-medium text-2xl abcd22">
                 Novice to Professional Trader Journey start from here.
               </p>
             </div>
