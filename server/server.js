@@ -152,7 +152,7 @@ app.post("/login", async (req, res) => {
 app.post("/logout", (req, res) => {
     res.clearCookie("token").json({ success: true, message: "Logged out successfully" });
 })
-app.get("/",(req.res)=>{
+app.get("/",(req,res)=>{
     res.send("welcome")
 })
 app.listen(4000, () => {
