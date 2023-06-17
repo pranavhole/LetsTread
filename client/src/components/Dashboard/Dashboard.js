@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactComponent as CopyIcon } from './copy-icon.svg'; // Replace with your copy icon SVG
-
-const Dashboard = () => {
+import axios from 'axios';
+const Dashboard = ({ handleLogout, data }) => {
   const [showEarningGraph, setShowEarningGraph] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-
   const user = {
-    name: 'John Doe',
-    email: 'johndoe@example.com',
-    phone: '123-456-7890',
-    city: 'New York',
-    state: 'New York',
-    pincode: '12345',
+    name:data.name,
+    email:data.email,
+    phone:data.phone,
+    city:data.city,
+    state:data.state,
+    pincode:data.pincode,
     bio: 'I am a lifelong learner passionate about programming and technology.',
-    referralCode: 'ABCD123',
+    referralCode:data.refer,
     pastEarnings: [
       { month: 'Jan', amount: 100 },
       { month: 'Feb', amount: 200 },
@@ -38,7 +37,9 @@ const Dashboard = () => {
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="relative w-full mx-auto px-4 py-10 bg-white shadow rounded-3xl sm:p-10">
+        <div className='relative p-3 pt-0 flex-row-reverse '>EDIT</div>
           <div className="max-w-md mx-auto">
+          
             <div className="h-40 w-full relative mb-4">
               <img
                 className="rounded-t-3xl object-cover h-full w-full"
@@ -109,6 +110,7 @@ const Dashboard = () => {
               {showEarningGraph && (
                 <div className="mt-8">
                   <h2 className="text-2xl font-bold mb-4">Earning Graph</h2>
+                  {console.log(data)}
                   {/* Add your earning graph component here */}
                 </div>
               )}
@@ -127,6 +129,7 @@ const Dashboard = () => {
                   ))}
                 </div>
               </div>
+              <button onClick={handleLogout}>Logout</button>
             </div>
           </div>
         </div>

@@ -1,135 +1,135 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 function App() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
-  const [phoneNo, setPhoneNo] = useState('');
-  const [pincode, setPincode] = useState('');
-  const [referralCode, setReferralCode] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const history = useNavigate();
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    phoneNo: "",
+    telePhone: "",
+    city: "",
+    state: "",
+    pincode: "",
+    referralCode: "",
+  });
 
-  const handleRegister = async () => {
-    try {
-      const response = await axios.post('http://localhost:4000/register', {
-        name,
-        email,
-        password,
-        city,
-        state,
-        phoneNo,
-        pincode,
-        referralCode,
-      });
-      console.log(response.data);
-      setSuccessMessage('Registration successful');
-      setErrorMessage('');
-      // Clear form inputs after successful registration
-      setName('');
-      setEmail('');
-      setPassword('');
-      setCity('');
-      setState('');
-      setPhoneNo('');
-      setPincode('');
-      setReferralCode('');
-    } catch (error) {
-      console.error(error.response.data);
-      setSuccessMessage('');
-      setErrorMessage('Error registering user');
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setUser({
+      ...user,
+      [name]: value
+    })
+  }
+
+  const register = () => {
+    const { name, email, password, phoneNo, telePhone, city, state, pincode, referralCode } = user;
+    if (email.slice(-10) === '.gmail.com') {
+      if (name && email && password && phoneNo && city && state && pincode) {
+        axios.post('http://localhost:4000/reg', user)
+          .then(res => {
+            console.log(res);
+            if (res.data === 'User already exists') {
+              toast('user already exist');
+            }
+            else {
+              toast(res.data);
+              history('/login')
+            }
+          })
+      }
     }
-  };
-
-  const handleLogin = async () => {
-    try {
-      const response = await axios.post('/login', {
-        email,
-        password,
-      });
-      console.log(response.data);
-      setErrorMessage('');
-      // Clear form inputs after successful login
-      setEmail('');
-      setPassword('');
-    } catch (error) {
-      console.error(error.response.data);
-      setErrorMessage('Invalid email or password');
+    else {
+      toast('Only Gmail are allowed')
     }
-  };
-
+  }
   return (
-    <div>
-      {successMessage && <p>{successMessage}</p>}
-      {errorMessage && <p>{errorMessage}</p>}
-      <h1>Registration Form</h1>
+
+    <div className="container mx-auto px-4 py-8">
+      <ToastContainer />
+      <h1 className="text-3xl font-bold mb-8">Registration Form</h1>
       <input
         type="text"
+        name="name"
         placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={user.name}
+        onChange={handleChange}
+        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="email"
+        name="email"
         placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={user.email}
+        onChange={handleChange}
+        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="password"
+        name="password"
         placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={user.password}
+        onChange={handleChange}
+        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="text"
         placeholder="City"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
+        name="city"
+        value={user.city}
+        onChange={handleChange}
+        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="text"
+        name="state"
         placeholder="State"
-        value={state}
-        onChange={(e) => setState(e.target.value)}
+        value={user.state}
+        onChange={handleChange}
+        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="text"
+        name="phoneNo"
         placeholder="Phone Number"
-        value={phoneNo}
-        onChange={(e) => setPhoneNo(e.target.value)}
+        value={user.phoneNo}
+        onChange={handleChange}
+        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="text"
+        name="telePhone"
+        placeholder="telNo"
+        value={user.telePhone}
+        onChange={handleChange}
+        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
+      />
+      <input
+        type="text"
+        name="pincode"
         placeholder="Pincode"
-        value={pincode}
-        onChange={(e) => setPincode(e.target.value)}
+        value={user.pincode}
+        onChange={handleChange}
+        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="text"
+        name="referralCode"
         placeholder="Referral Code"
-        value={referralCode}
-        onChange={(e) => setReferralCode(e.target.value)}
+        value={user.referralCode}
+        onChange={handleChange}
+        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
-      <button onClick={handleRegister}>Register</button>
+      <button
+        onClick={register}
+        className="w-full px-4 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600"
+      >
+        Register
 
-      <h1>Login Form</h1>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogin}>Login</button>
+      </button>
     </div>
   );
 }

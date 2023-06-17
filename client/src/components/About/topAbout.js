@@ -9,7 +9,7 @@ export default function TopAbout() {
         <div className="text-4xl font-bold text-green-900">WE ARE</div>
         <img
           src={`${process.env.PUBLIC_URL}/Images/logo3d.png`}
-          className="max-w-full h-auto py-6"
+          className="max-w-full py-6 h-56"
           alt="Logo"
         />
         <div className="text-5xl font-bold text-indigo-900">LET’S TRADE INDIA</div>

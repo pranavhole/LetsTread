@@ -2,6 +2,8 @@ import React from "react";
 import { Fade } from "react-reveal";
 import Stock from "../../svgs/stock";
 import Stock2 from "../../svgs/stock2";
+import Stock3 from "../../svgs/stock3";
+import Stock4 from "../../svgs/stock4";
 export default function steps() {
   return (
     <>
@@ -67,21 +69,13 @@ export default function steps() {
             </div>
           </div>
           <div class="flex items-center px-10 pl-24 abc">
-            <img
-              src={process.env.PUBLIC_URL + "/Images/step-3.png"}
-              className="rounded-2xl w-60"
-              alt=""
-            />
+            <Stock3/>
           </div>
         </div>
       
         <div className="flex justify-around abcd2">
           <div class="flex items-center px-10 pl-24">
-            <img
-              src={process.env.PUBLIC_URL + "/Images/444.png"}
-              className="rounded-2xl w-96"
-              alt=""
-            />
+            <Stock4/>
           </div>
           <div className="py-25 pl-50">
             <div className="flex flex-row flex-wrap py-3 w-96">
