@@ -152,6 +152,9 @@ app.post("/login", async (req, res) => {
 app.post("/logout", (req, res) => {
     res.clearCookie("token").json({ success: true, message: "Logged out successfully" });
 })
+app.get("/",(req.res)=>{
+    res.send("welcome")
+})
 app.listen(4000, () => {
     console.log("Server is running at http://localhost:4000");
 });
