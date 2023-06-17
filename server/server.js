@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 // Database connection
 mongoose
-    .connect("mongodb+srv://backend:backend@cluster0.bjoglyj.mongodb.net/?retryWrites=true/final", {
+    .connect("mongodb+srv://backend:backend@cluster0.bjoglyj.mongodb.net/?retryWrites=true", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
