@@ -3,32 +3,37 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 function App() {
   const history = useNavigate();
   const [user, setUser] = useState({
     name: "",
     email: "",
     password: "",
-    phoneNo: "",
-    telePhone: "",
+    phone: "",
+    telegram:"",
     city: "",
     state: "",
     pincode: "",
     referralCode: "",
   });
-
+  const [searchParams] = useSearchParams();
+  const refer=searchParams.get('refer')
+  
   const handleChange = e => {
     const { name, value } = e.target;
     setUser({
       ...user,
       [name]: value
     })
-  }
+    }
 
   const register = () => {
-    const { name, email, password, phoneNo, telePhone, city, state, pincode, referralCode } = user;
-    if (email.slice(-10) === '.gmail.com') {
-      if (name && email && password && phoneNo && city && state && pincode) {
+    const { name, email, password, phone, city, state,telegram, pincode, referralCode } = user;
+    console.log(user)
+    if (email.slice(-9) === 'gmail.com') {
+      if (name && email && password && phone && city && state && pincode) {
         axios.post('http://localhost:4000/reg', user)
           .then(res => {
             console.log(res);
@@ -46,6 +51,7 @@ function App() {
       toast('Only Gmail are allowed')
     }
   }
+
   return (
 
     <div className="container mx-auto px-4 py-8">
@@ -93,17 +99,17 @@ function App() {
       />
       <input
         type="text"
-        name="phoneNo"
+        name="phone"
         placeholder="Phone Number"
-        value={user.phoneNo}
+        value={user.phone}
         onChange={handleChange}
         className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
       <input
         type="text"
-        name="telePhone"
-        placeholder="telNo"
-        value={user.telePhone}
+        name="telegram"
+        placeholder="telegram"
+        value={user.telegram}
         onChange={handleChange}
         className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
@@ -115,7 +121,16 @@ function App() {
         onChange={handleChange}
         className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
-      <input
+       {refer ? (
+        <input
+        type="text"
+        name="referralCode"
+        placeholder="Referral Code"
+        value={refer}
+        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
+      />
+      ) : (
+        <input
         type="text"
         name="referralCode"
         placeholder="Referral Code"
@@ -123,6 +138,8 @@ function App() {
         onChange={handleChange}
         className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
+      )}
+      
       <button
         onClick={register}
         className="w-full px-4 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600"

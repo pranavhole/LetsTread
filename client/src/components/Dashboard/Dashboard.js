@@ -26,7 +26,8 @@ const Dashboard = ({ handleLogout, data }) => {
   };
 
   const handleCopyReferralCode = () => {
-    navigator.clipboard.writeText(user.referralCode);
+    let text = 'http://localhost:3000/reg?refer=' + user.referralCode
+    navigator.clipboard.writeText(text);
     setIsCopied(true);
     setTimeout(() => {
       setIsCopied(false);
@@ -88,7 +89,7 @@ const Dashboard = ({ handleLogout, data }) => {
               </div>
               <div className="mt-8">
                 <h2 className="text-2xl font-bold mb-4 flex items-center">
-                  Referral Code
+                  Referral link
                   <button
                     className="ml-2 focus:outline-none"
                     onClick={handleCopyReferralCode}
@@ -104,31 +105,10 @@ const Dashboard = ({ handleLogout, data }) => {
                   className="text-gray-800 cursor-pointer"
                   onClick={handleReferralCodeClick}
                 >
-                  {user.referralCode}
+                  http://localhost:3000/reg?refer={user.referralCode}
                 </p>
               </div>
-              {showEarningGraph && (
-                <div className="mt-8">
-                  <h2 className="text-2xl font-bold mb-4">Earning Graph</h2>
-                  {console.log(data)}
-                  {/* Add your earning graph component here */}
-                </div>
-              )}
-              <div className="mt-8">
-                <h2 className="text-2xl font-bold mb-4">Past Earnings</h2>
-                <div className="grid grid-cols-3 gap-4 items-end">
-                  {user.pastEarnings.map((earnings) => (
-                    <div
-                      key={earnings.month}
-                      className="bg-blue-500 rounded-lg shadow-lg p-4 text-white flex flex-col justify-between"
-                      style={{ height: earnings.amount }}
-                    >
-                      <p className="text-sm font-semibold">{earnings.month}</p>
-                      <p className="text-lg font-bold">${earnings.amount}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            
               <button onClick={handleLogout}>Logout</button>
             </div>
           </div>

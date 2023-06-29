@@ -10,7 +10,7 @@ import path from "path";
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin:[process.env.FRONT_END],
+    origin:['http://localhost:3000'],
     methods:['GET',"POST","PUT","DELETE"],
     credentials:true
 }));
@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 // Database connection
 mongoose
-    .connect("mongodb+srv://backend:backend@cluster0.bjoglyj.mongodb.net/?retryWrites=true", {
+    .connect("mongodb://127.0.0.1:27017/final2", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
     name: String,
     email: String,
     password: String,
-    telephone: String,
+    telegram: String,
     phone: String,
     date: String,
     city: String,
@@ -97,7 +97,7 @@ function checkFileType(file, cb) {
 }
 
 app.post("/reg", upload, async (req, res) => {
-        const { name, email, password, phone, city, telephone, state, pincode } = req.body;
+        const { name, email, password, phone, city, telegram, state, pincode } = req.body;
 
         const existingUser = await User.findOne({ email });
 
@@ -115,7 +115,7 @@ app.post("/reg", upload, async (req, res) => {
             password: encriptedPassword,
             phone,
             city,
-            telephone,
+            telegram,
             date: currentDate,
             state,
             pincode,

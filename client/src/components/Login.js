@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from 'react-router-dom';
+import image from "./png.png"
 const Login = ({onhandleData}) => {
   let history = useNavigate();
   const [user, setUser] = useState({
@@ -24,9 +25,8 @@ const Login = ({onhandleData}) => {
           console.log(res.data)
           toast.success(res.data.message);
           onhandleData(res.data.user);
-          
+          console.log(res.data.user);
           history("/")
-          
         }
         )
     }
@@ -72,7 +72,7 @@ const Login = ({onhandleData}) => {
               <div className="flex justify-around">
                 <div className="container flex px-10 pl-10">
                   <img
-                    src={process.env.PUBLIC_URL + "/Images/login6.png"}
+                    src={image}
                     className="box2 rounded-2xl w-5/6"
                     alt=""
                   />
